@@ -20,17 +20,41 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j70-3E-0Lg">
-                                        <rect key="frame" x="41" y="401" width="600" height="600"/>
+                                        <rect key="frame" x="174" y="625" width="600" height="600"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qb6-48-Nf4">
+                                        <rect key="frame" x="285" y="276" width="30" height="30"/>
+                                        <state key="normal" title="Flip">
+                                            <color key="titleColor" red="0.34671804470000001" green="1" blue="0.027302480380000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56e-D5-s4H">
+                                        <rect key="frame" x="283" y="314" width="34" height="30"/>
+                                        <state key="normal" title="Time">
+                                            <color key="titleColor" red="0.34671804470000001" green="1" blue="0.027302480380000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHA-3I-YSe">
+                                        <rect key="frame" x="282" y="238" width="36" height="30"/>
+                                        <state key="normal" title="Snap">
+                                            <color key="titleColor" red="0.34671804470000001" green="1" blue="0.027302480380000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="cameraView" destination="j70-3E-0Lg" id="IY4-1B-YUg"/>
+                        <outlet property="cameraView" destination="fXY-pL-Onq" id="jyf-v9-bHT"/>
+                        <outlet property="flipButton" destination="Qb6-48-Nf4" id="r3f-1j-frV"/>
+                        <outlet property="snapButton" destination="YHA-3I-YSe" id="y7d-HT-gq9"/>
+                        <outlet property="timeLimitButton" destination="56e-D5-s4H" id="Gcg-s4-VZB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAk-4u-oHl" userLabel="First Responder" sceneMemberID="firstResponder"/>
