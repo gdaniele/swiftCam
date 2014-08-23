@@ -39,8 +39,5 @@ class CameraViewController: UIViewController {
 //    Sets auto layout attributes of cameraView UI elements
     func setupCameraView() {
         cameraView.frame = UIScreen.mainScreen().applicationFrame
-        timeLimitButton.frame = CGRectMake(0, 0, timeLimitButton.frame.size.width, timeLimitButton.frame.size.height)
-        snapButton.frame = CGRectMake(0, 0, 0, 0)
-        flipButton.frame = CGRectMake(200, 200, flipButton.frame.size.width, flipButton.frame.size.height)
     }
 }

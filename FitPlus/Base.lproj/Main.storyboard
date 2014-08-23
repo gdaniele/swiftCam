@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dS1-yy-Nn9">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+        <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Camera View Controller-->
@@ -16,39 +17,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fXY-pL-Onq">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fXY-pL-Onq">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j70-3E-0Lg">
-                                        <rect key="frame" x="174" y="625" width="600" height="600"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qb6-48-Nf4">
-                                        <rect key="frame" x="285" y="276" width="30" height="30"/>
-                                        <state key="normal" title="Flip">
-                                            <color key="titleColor" red="0.34671804470000001" green="1" blue="0.027302480380000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56e-D5-s4H">
-                                        <rect key="frame" x="283" y="314" width="34" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56e-D5-s4H">
+                                        <rect key="frame" x="10" y="550" width="34" height="30"/>
                                         <state key="normal" title="Time">
                                             <color key="titleColor" red="0.34671804470000001" green="1" blue="0.027302480380000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHA-3I-YSe">
-                                        <rect key="frame" x="282" y="238" width="36" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHA-3I-YSe">
+                                        <rect key="frame" x="282" y="550" width="36" height="30"/>
                                         <state key="normal" title="Snap">
+                                            <color key="titleColor" red="0.34671804470000001" green="1" blue="0.027302480380000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qb6-48-Nf4">
+                                        <rect key="frame" x="560" y="550" width="30" height="30"/>
+                                        <state key="normal" title="Flip">
                                             <color key="titleColor" red="0.34671804470000001" green="1" blue="0.027302480380000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="YHA-3I-YSe" secondAttribute="centerX" id="7I7-kf-Jcz"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qb6-48-Nf4" secondAttribute="trailing" constant="10" id="85l-kL-9xk"/>
+                                    <constraint firstAttribute="bottom" secondItem="YHA-3I-YSe" secondAttribute="bottom" constant="20" id="E6c-U4-UER"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qb6-48-Nf4" secondAttribute="bottom" constant="20" id="XK2-Lq-g3T"/>
+                                    <constraint firstAttribute="bottom" secondItem="56e-D5-s4H" secondAttribute="bottom" constant="20" id="a1J-AC-ISn"/>
+                                    <constraint firstItem="56e-D5-s4H" firstAttribute="leading" secondItem="fXY-pL-Onq" secondAttribute="leading" constant="10" id="nMM-7x-Pby"/>
+                                </constraints>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="100" width="600" height="600"/>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OCY-Uy-ZlJ" firstAttribute="top" secondItem="fXY-pL-Onq" secondAttribute="bottom" id="6o0-ei-5gf"/>
+                            <constraint firstItem="fXY-pL-Onq" firstAttribute="top" secondItem="OiK-et-Gsr" secondAttribute="topMargin" id="cwD-DQ-Klr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fXY-pL-Onq" secondAttribute="trailing" constant="-16" id="hTF-tn-NpR"/>
+                            <constraint firstItem="fXY-pL-Onq" firstAttribute="leading" secondItem="OiK-et-Gsr" secondAttribute="leadingMargin" constant="-16" id="yPD-nv-c7R"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="cameraView" destination="fXY-pL-Onq" id="jyf-v9-bHT"/>
@@ -59,7 +73,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAk-4u-oHl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="804" y="526"/>
+            <point key="canvasLocation" x="1179" y="551.25"/>
         </scene>
     </scenes>
 </document>
