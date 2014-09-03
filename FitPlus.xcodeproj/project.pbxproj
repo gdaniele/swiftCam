@@ -12,6 +12,7 @@
 		B3303C0C19A8228F006D6693 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3303C0B19A8228F006D6693 /* Images.xcassets */; };
 		B3303C1819A8228F006D6693 /* FitPlusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3303C1719A8228F006D6693 /* FitPlusTests.swift */; };
 		B3303C2219A83373006D6693 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3303C2119A83373006D6693 /* CameraViewController.swift */; };
+		B3B9F0D019B7597300857B6D /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9F0CF19B7597300857B6D /* PreviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		B3303C1619A8228F006D6693 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3303C1719A8228F006D6693 /* FitPlusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitPlusTests.swift; sourceTree = "<group>"; };
 		B3303C2119A83373006D6693 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		B3B9F0CF19B7597300857B6D /* PreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			children = (
 				B3303C0419A8228F006D6693 /* AppDelegate.swift */,
 				B3303C2119A83373006D6693 /* CameraViewController.swift */,
+				B3B9F0CF19B7597300857B6D /* PreviewView.swift */,
 				B3303C0819A8228F006D6693 /* Main.storyboard */,
 				B3303C0B19A8228F006D6693 /* Images.xcassets */,
 				B3303C0219A8228F006D6693 /* Supporting Files */,
@@ -211,6 +214,7 @@
 			files = (
 				B3303C0519A8228F006D6693 /* AppDelegate.swift in Sources */,
 				B3303C2219A83373006D6693 /* CameraViewController.swift in Sources */,
+				B3B9F0D019B7597300857B6D /* PreviewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +402,7 @@
 				B3303C1D19A8228F006D6693 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B3303C1E19A8228F006D6693 /* Build configuration list for PBXNativeTarget "FitPlusTests" */ = {
 			isa = XCConfigurationList;
@@ -406,6 +411,7 @@
 				B3303C2019A8228F006D6693 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

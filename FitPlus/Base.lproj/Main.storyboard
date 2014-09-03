@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dS1-yy-Nn9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.9" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dS1-yy-Nn9">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
         <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fXY-pL-Onq">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fXY-pL-Onq" customClass="PreviewView" customModule="FitPlus" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56e-D5-s4H">
@@ -65,8 +65,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="cameraView" destination="fXY-pL-Onq" id="jyf-v9-bHT"/>
                         <outlet property="flipButton" destination="Qb6-48-Nf4" id="r3f-1j-frV"/>
+                        <outlet property="previewView" destination="fXY-pL-Onq" id="OCV-YL-66d"/>
                         <outlet property="snapButton" destination="YHA-3I-YSe" id="y7d-HT-gq9"/>
                         <outlet property="timeLimitButton" destination="56e-D5-s4H" id="Gcg-s4-VZB"/>
                     </connections>

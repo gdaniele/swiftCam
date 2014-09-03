@@ -11,10 +11,10 @@ import AVFoundation
 import AssetsLibrary
 
 class CameraViewController: UIViewController {
-    @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var snapButton: UIButton!
     @IBOutlet weak var flipButton: UIButton!
     @IBOutlet weak var timeLimitButton: UIButton!
+    @IBOutlet weak var previewView: PreviewView!
     
     var sessionQueue : dispatch_queue_t?
     var session : AVCaptureSession?
@@ -24,6 +24,12 @@ class CameraViewController: UIViewController {
     var stillImageOutput : AVCaptureStillImageOutput?
     var backgroundRecordingId : UIBackgroundTaskIdentifier?
     var deviceAuthorized : Bool?
+    
+    var sessionRunningAndDeviceAuthorized : Bool {
+        get {
+            return ((self.session?.running)! && (self.deviceAuthorized != nil))
+        }
+    }
     
     let CONTROL_NORMAL_COLOR : UIColor?
     let CONTROL_HIGHLIGHT_COLOR : UIColor?
@@ -39,42 +45,93 @@ class CameraViewController: UIViewController {
         self.flipButton.clipsToBounds = true
         self.timeLimitButton.clipsToBounds = true
         
-//        Create the AV Session!
-        var session : AVCaptureSession = AVCaptureSession.alloc()
+        //        Create the AV Session!
+        var session : AVCaptureSession = AVCaptureSession()
         self.session = session
         
-//        TODO : Set up preview
+        self.previewView.session = session
         
         self.checkForAuthorizationStatus()
         
-//        It's not safe to mutate an AVCaptureSession from multiple threads at the same time. Here, we're creating a sessionQueue so that the main thread is not blocked when AVCaptureSetting.startRunning is called.
+        //        It's not safe to mutate an AVCaptureSession from multiple threads at the same time. Here, we're creating a sessionQueue so that the main thread is not blocked when AVCaptureSetting.startRunning is called.
         var queue : dispatch_queue_t = dispatch_queue_create("sesion queue", DISPATCH_QUEUE_SERIAL);
         self.sessionQueue = queue
         
         dispatch_async(queue, { () -> Void in
             self.backgroundRecordingId = UIBackgroundTaskInvalid
             var error : NSError?
-                        
             
+            var videoDevice : AVCaptureDevice = CameraViewController.deviceWithMediaTypeAndPosition(AVMediaTypeVideo, position: AVCaptureDevicePosition.Back)
+            var videoDeviceInput : AVCaptureDeviceInput = AVCaptureDeviceInput.deviceInputWithDevice(videoDevice, error: &error) as AVCaptureDeviceInput
+            
+            if ((error) != nil) {
+                println("Error executing videoDevice")
+            }
+            
+            self.session?.beginConfiguration()
+            
+            if session.canAddInput(videoDeviceInput) {
+                session.addInput(videoDeviceInput)
+                self.videoDeviceInput = videoDeviceInput
+                self.videoDevice = videoDeviceInput.device
+            }
+            
+            var stillImageOutput : AVCaptureStillImageOutput = AVCaptureStillImageOutput()
+            
+            if session.canAddOutput(stillImageOutput) {
+                stillImageOutput.outputSettings = [AVVideoCodecKey : AVVideoCodecJPEG]
+                session.addOutput(stillImageOutput)
+                self.stillImageOutput = stillImageOutput
+            }
+            self.session?.commitConfiguration()
+            
+//            TODO: Optional here, dispatch another thread to set up camera controls
         })
         
-
-        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    /* In a storyboard-based application, you will often want to do a little preparation before navigation    */
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    
     override func viewDidAppear(animated: Bool) {
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        dispatch_async(self.sessionQueue, { () -> Void in
+//            TODO: Add observers
+            self.session!.startRunning()
+        })
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        dispatch_async(self.sessionQueue, { () -> Void in
+            //            TODO: Remove observers
+            self.session!.stopRunning()
+        })
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
+    
+    //    MARK : Utilities
+    class func deviceWithMediaTypeAndPosition(mediaType: NSString, position: AVCaptureDevicePosition) -> AVCaptureDevice {
+        var devices : NSArray = AVCaptureDevice.devicesWithMediaType(mediaType)
+        var captureDevice : AVCaptureDevice = devices.firstObject as AVCaptureDevice
+        
+        for device in devices {
+            let device = device as AVCaptureDevice
+            if device.position == position {
+                captureDevice = device
+                break
+            }
+        }
+        return captureDevice
     }
     
     func checkForAuthorizationStatus() {
@@ -91,9 +148,7 @@ class CameraViewController: UIViewController {
         })
     }
     
-//    MARK : Utilities
-    class func deviceWithMediaTypeAndPosition(mediaType: NSString, position: AVCaptureDevicePosition) -> AVCaptureDevice {
-        return AVCaptureDevice.alloc();
-    }
+//    MARK: UI
+
     
 }
