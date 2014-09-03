@@ -33,6 +33,9 @@
                                             <color key="titleColor" red="0.34671804470000001" green="1" blue="0.027302480380000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="takeStillImage:" destination="dS1-yy-Nn9" eventType="touchUpInside" id="bgP-ds-sSb"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qb6-48-Nf4">
                                         <rect key="frame" x="560" y="550" width="30" height="30"/>
@@ -40,6 +43,9 @@
                                             <color key="titleColor" red="0.34671804470000001" green="1" blue="0.027302480380000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="flipCamera:" destination="dS1-yy-Nn9" eventType="touchUpInside" id="4kk-0O-nki"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -66,7 +72,7 @@
                     </view>
                     <connections>
                         <outlet property="flipButton" destination="Qb6-48-Nf4" id="r3f-1j-frV"/>
-                        <outlet property="previewView" destination="fXY-pL-Onq" id="OCV-YL-66d"/>
+                        <outlet property="previewView" destination="fXY-pL-Onq" id="Lqd-cd-gLe"/>
                         <outlet property="snapButton" destination="YHA-3I-YSe" id="y7d-HT-gq9"/>
                         <outlet property="timeLimitButton" destination="56e-D5-s4H" id="Gcg-s4-VZB"/>
                     </connections>

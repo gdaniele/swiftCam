@@ -40,6 +40,7 @@ class CameraViewController: UIViewController {
         self.snapButton.layer.cornerRadius = 4
         self.flipButton.layer.cornerRadius = 4
         self.timeLimitButton.layer.cornerRadius = 4
+        self.timeLimitButton.layer.opacity = 0
         
         self.snapButton.clipsToBounds = true
         self.flipButton.clipsToBounds = true
@@ -95,29 +96,59 @@ class CameraViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidAppear(animated: Bool) {
-        
-    }
-    
     override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
         dispatch_async(self.sessionQueue, { () -> Void in
-//            TODO: Add observers
+            self.addNotificationObservers()
             self.session!.startRunning()
         })
+        super.viewWillAppear(animated)
     }
     
     override func viewDidDisappear(animated: Bool) {
         dispatch_async(self.sessionQueue, { () -> Void in
-            //            TODO: Remove observers
             self.session!.stopRunning()
+            self.removeNotificationObservers()
         })
+        super.viewDidDisappear(animated)
     }
     
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
     
+//    MARK: Device Configuration
+    class func setFlashMode(flashMode: AVCaptureFlashMode, device: AVCaptureDevice) {
+        if device.flashAvailable && device.isFlashModeSupported(flashMode) {
+            var error : NSError?
+            if device.lockForConfiguration(&error) {
+                device.flashMode = flashMode
+                device.unlockForConfiguration()
+            } else {
+                println("Error turning on flash")
+            }
+        }
+    }
+    
+    func focus(focusMode: AVCaptureFocusMode, exposureMode: AVCaptureExposureMode, point: CGPoint, monitorSubjectAreaChange: Bool) {
+        dispatch_async(self.sessionQueue, { () -> Void in
+            var device : AVCaptureDevice = self.videoDevice!
+            var error : NSError?
+            if device.lockForConfiguration(&error) {
+                if device.focusPointOfInterestSupported && device.isFocusModeSupported(focusMode) {
+                    device.focusMode = focusMode
+                    device.focusPointOfInterest = point
+                }
+                if device.exposurePointOfInterestSupported && device.isExposureModeSupported(exposureMode) {
+                    device.exposureMode = exposureMode
+                    device.exposurePointOfInterest = point
+                }
+                device.subjectAreaChangeMonitoringEnabled = monitorSubjectAreaChange
+                device.unlockForConfiguration()
+            } else {
+                println("Error setting focus")
+            }
+        })
+    }
     
     //    MARK : Utilities
     class func deviceWithMediaTypeAndPosition(mediaType: NSString, position: AVCaptureDevicePosition) -> AVCaptureDevice {
@@ -149,6 +180,93 @@ class CameraViewController: UIViewController {
     }
     
 //    MARK: UI
+    
+//    MARK: Actions
+    @IBAction func takeStillImage(sender: AnyObject) {
+        dispatch_async(self.sessionQueue, { () -> Void in
+            var layer : AVCaptureVideoPreviewLayer = self.previewView.layer as AVCaptureVideoPreviewLayer
+            self.stillImageOutput?.connectionWithMediaType(AVMediaTypeVideo).videoOrientation = layer.connection.videoOrientation
+            
+//            For still images, let's set flash to auto
+            CameraViewController.setFlashMode(AVCaptureFlashMode.Auto, device: self.videoDevice!)
+            
+//            Capture the image
+            self.stillImageOutput?.captureStillImageAsynchronouslyFromConnection(self.stillImageOutput?.connectionWithMediaType(AVMediaTypeVideo), completionHandler: { (imageDataSampleBuffer, error) -> Void in
+                if ((imageDataSampleBuffer) != nil) {
+                    var imageData : NSData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataSampleBuffer)
+                    var image : UIImage = UIImage(data: imageData)
+                    ALAssetsLibrary().writeImageToSavedPhotosAlbum(image.CGImage, orientation: ALAssetOrientation.fromRaw(image.imageOrientation.toRaw())!, completionBlock: nil)
+                }
+            })
+        })
+    }
 
+    @IBAction func flipCamera(sender: AnyObject) {
+        self.snapButton.enabled = false
+        self.flipButton.enabled = false
+        self.timeLimitButton.enabled = false
+        
+        dispatch_async(self.sessionQueue, { () -> Void in
+            var currentVideoDevice : AVCaptureDevice = self.videoDevice!
+            var preferredPosition : AVCaptureDevicePosition = AVCaptureDevicePosition.Unspecified
+            var currentPosition : AVCaptureDevicePosition = currentVideoDevice.position
+            
+            switch (currentPosition)
+            {
+            case AVCaptureDevicePosition.Unspecified:
+                preferredPosition = AVCaptureDevicePosition.Back
+                break;
+            case AVCaptureDevicePosition.Back:
+                preferredPosition = AVCaptureDevicePosition.Front
+                break;
+            case AVCaptureDevicePosition.Front:
+                preferredPosition = AVCaptureDevicePosition.Back
+                break;
+            }
+            
+            var newVideoDevice : AVCaptureDevice = CameraViewController.deviceWithMediaTypeAndPosition(AVMediaTypeVideo, position: preferredPosition)
+            var newVideoDeviceInput : AVCaptureDeviceInput = AVCaptureDeviceInput.deviceInputWithDevice(newVideoDevice, error: nil) as AVCaptureDeviceInput
+            
+            self.session!.beginConfiguration()
+            
+            self.session!.removeInput(self.videoDeviceInput)
+            
+            if self.session!.canAddInput(newVideoDeviceInput) {
+                NSNotificationCenter.defaultCenter().removeObserver(self, name: AVCaptureDeviceSubjectAreaDidChangeNotification, object: currentVideoDevice)
+                
+                NSNotificationCenter.defaultCenter().addObserver(self, selector: "subjectAreaDidChance", name: AVCaptureDeviceSubjectAreaDidChangeNotification, object: newVideoDevice)
+                
+                self.session!.addInput(newVideoDeviceInput)
+                self.videoDeviceInput = newVideoDeviceInput
+                self.videoDevice = newVideoDeviceInput.device
+            } else {
+                self.session!.addInput(self.videoDeviceInput)
+            }
+            self.session!.commitConfiguration()
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.snapButton.enabled = true
+                self.flipButton.enabled = true
+                self.timeLimitButton.enabled = true
+//                TODO: Implement Video features for iOS 8 (e.g. white bal, ISO, etc)
+            })
+        
+        })
+    }
+    
+//    MARK: Observers :)
+    func subjectAreaDidChange(notification: NSNotification) {
+        var devicePoint : CGPoint = CGPoint(x: 0.5, y: 0.5)
+        self.focus(AVCaptureFocusMode.ContinuousAutoFocus, exposureMode: AVCaptureExposureMode.ContinuousAutoExposure, point: devicePoint, monitorSubjectAreaChange: false)
+        
+    }
+    
+    func addNotificationObservers() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "subjectAreaDidChange", name: AVCaptureDeviceSubjectAreaDidChangeNotification, object: self.videoDevice)
+    }
+    
+    func removeNotificationObservers() {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: AVCaptureDeviceSubjectAreaDidChangeNotification, object: self.videoDevice)
+    }
     
 }
