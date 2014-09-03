@@ -1,6 +1,6 @@
 //
 //  CameraViewController.swift
-//  FitPlus
+//  SwiftCamera
 //
 //  Created by Giancarlo Daniele on 8/22/14.
 //  Copyright (c) 2014 Giancarlo Daniele. All rights reserved.
@@ -172,7 +172,7 @@ class CameraViewController: UIViewController {
                 self.deviceAuthorized = true
             } else {
                 dispatch_sync(dispatch_get_main_queue(), { () -> Void in
-                    UIAlertView(title: "FitPlus", message: "FitPlus doesn't have permission to use the camera!", delegate: self, cancelButtonTitle: "OK").show()
+                    UIAlertView(title: "SwiftCamera", message: "SwiftCamera doesn't have permission to use the camera!", delegate: self, cancelButtonTitle: "OK").show()
                     self.deviceAuthorized = false
                 })
             }

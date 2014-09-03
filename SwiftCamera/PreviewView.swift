@@ -1,6 +1,6 @@
 //
 //  PreviewView.swift
-//  FitPlus
+//  SwiftCamera
 //
 //  Created by Giancarlo Daniele on 9/3/14.
 //  Copyright (c) 2014 Giancarlo Daniele. All rights reserved.

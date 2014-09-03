@@ -17,21 +17,7 @@
                BlueprintIdentifier = "B3303BFE19A8228F006D6693"
                BuildableName = "SwiftCam.app"
                BlueprintName = "SwiftCam"
-               ReferencedContainer = "container:FitPlus.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B3303C1019A8228F006D6693"
-               BuildableName = "FitPlusTests.xctest"
-               BlueprintName = "FitPlusTests"
-               ReferencedContainer = "container:FitPlus.xcodeproj">
+               ReferencedContainer = "container:SwiftCamera.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -42,16 +28,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B3303C1019A8228F006D6693"
-               BuildableName = "FitPlusTests.xctest"
-               BlueprintName = "FitPlusTests"
-               ReferencedContainer = "container:FitPlus.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
@@ -59,7 +35,7 @@
             BlueprintIdentifier = "B3303BFE19A8228F006D6693"
             BuildableName = "SwiftCam.app"
             BlueprintName = "SwiftCam"
-            ReferencedContainer = "container:FitPlus.xcodeproj">
+            ReferencedContainer = "container:SwiftCamera.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -78,7 +54,7 @@
             BlueprintIdentifier = "B3303BFE19A8228F006D6693"
             BuildableName = "SwiftCam.app"
             BlueprintName = "SwiftCam"
-            ReferencedContainer = "container:FitPlus.xcodeproj">
+            ReferencedContainer = "container:SwiftCamera.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,7 +72,7 @@
             BlueprintIdentifier = "B3303BFE19A8228F006D6693"
             BuildableName = "SwiftCam.app"
             BlueprintName = "SwiftCam"
-            ReferencedContainer = "container:FitPlus.xcodeproj">
+            ReferencedContainer = "container:SwiftCamera.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

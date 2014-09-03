@@ -10,7 +10,7 @@
 		B3303C0519A8228F006D6693 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3303C0419A8228F006D6693 /* AppDelegate.swift */; };
 		B3303C0A19A8228F006D6693 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3303C0819A8228F006D6693 /* Main.storyboard */; };
 		B3303C0C19A8228F006D6693 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3303C0B19A8228F006D6693 /* Images.xcassets */; };
-		B3303C1819A8228F006D6693 /* FitPlusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3303C1719A8228F006D6693 /* FitPlusTests.swift */; };
+		B3303C1819A8228F006D6693 /* SwiftCameraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3303C1719A8228F006D6693 /* SwiftCameraTests.swift */; };
 		B3303C2219A83373006D6693 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3303C2119A83373006D6693 /* CameraViewController.swift */; };
 		B3B9F0D019B7597300857B6D /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9F0CF19B7597300857B6D /* PreviewView.swift */; };
 /* End PBXBuildFile section */
@@ -21,19 +21,19 @@
 			containerPortal = B3303BF719A8228F006D6693 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B3303BFE19A8228F006D6693;
-			remoteInfo = FitPlus;
+			remoteInfo = SwiftCamera;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B3303BFF19A8228F006D6693 /* FitPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3303BFF19A8228F006D6693 /* SwiftCam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftCam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3303C0319A8228F006D6693 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3303C0419A8228F006D6693 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3303C0919A8228F006D6693 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B3303C0B19A8228F006D6693 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		B3303C1119A8228F006D6693 /* FitPlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitPlusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3303C1119A8228F006D6693 /* SwiftCameraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftCameraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3303C1619A8228F006D6693 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B3303C1719A8228F006D6693 /* FitPlusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitPlusTests.swift; sourceTree = "<group>"; };
+		B3303C1719A8228F006D6693 /* SwiftCameraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCameraTests.swift; sourceTree = "<group>"; };
 		B3303C2119A83373006D6693 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		B3B9F0CF19B7597300857B6D /* PreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,8 +59,8 @@
 		B3303BF619A8228F006D6693 = {
 			isa = PBXGroup;
 			children = (
-				B3303C0119A8228F006D6693 /* FitPlus */,
-				B3303C1419A8228F006D6693 /* FitPlusTests */,
+				B3303C0119A8228F006D6693 /* SwiftCamera */,
+				B3303C1419A8228F006D6693 /* SwiftCameraTests */,
 				B3303C0019A8228F006D6693 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,13 +68,13 @@
 		B3303C0019A8228F006D6693 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B3303BFF19A8228F006D6693 /* FitPlus.app */,
-				B3303C1119A8228F006D6693 /* FitPlusTests.xctest */,
+				B3303BFF19A8228F006D6693 /* SwiftCam.app */,
+				B3303C1119A8228F006D6693 /* SwiftCameraTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B3303C0119A8228F006D6693 /* FitPlus */ = {
+		B3303C0119A8228F006D6693 /* SwiftCamera */ = {
 			isa = PBXGroup;
 			children = (
 				B3303C0419A8228F006D6693 /* AppDelegate.swift */,
@@ -84,7 +84,7 @@
 				B3303C0B19A8228F006D6693 /* Images.xcassets */,
 				B3303C0219A8228F006D6693 /* Supporting Files */,
 			);
-			path = FitPlus;
+			path = SwiftCamera;
 			sourceTree = "<group>";
 		};
 		B3303C0219A8228F006D6693 /* Supporting Files */ = {
@@ -95,13 +95,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B3303C1419A8228F006D6693 /* FitPlusTests */ = {
+		B3303C1419A8228F006D6693 /* SwiftCameraTests */ = {
 			isa = PBXGroup;
 			children = (
-				B3303C1719A8228F006D6693 /* FitPlusTests.swift */,
+				B3303C1719A8228F006D6693 /* SwiftCameraTests.swift */,
 				B3303C1519A8228F006D6693 /* Supporting Files */,
 			);
-			path = FitPlusTests;
+			path = SwiftCameraTests;
 			sourceTree = "<group>";
 		};
 		B3303C1519A8228F006D6693 /* Supporting Files */ = {
@@ -128,13 +128,13 @@
 			dependencies = (
 			);
 			name = SwiftCam;
-			productName = FitPlus;
-			productReference = B3303BFF19A8228F006D6693 /* FitPlus.app */;
+			productName = SwiftCamera;
+			productReference = B3303BFF19A8228F006D6693 /* SwiftCam.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B3303C1019A8228F006D6693 /* FitPlusTests */ = {
+		B3303C1019A8228F006D6693 /* SwiftCameraTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B3303C1E19A8228F006D6693 /* Build configuration list for PBXNativeTarget "FitPlusTests" */;
+			buildConfigurationList = B3303C1E19A8228F006D6693 /* Build configuration list for PBXNativeTarget "SwiftCameraTests" */;
 			buildPhases = (
 				B3303C0D19A8228F006D6693 /* Sources */,
 				B3303C0E19A8228F006D6693 /* Frameworks */,
@@ -145,9 +145,9 @@
 			dependencies = (
 				B3303C1319A8228F006D6693 /* PBXTargetDependency */,
 			);
-			name = FitPlusTests;
-			productName = FitPlusTests;
-			productReference = B3303C1119A8228F006D6693 /* FitPlusTests.xctest */;
+			name = SwiftCameraTests;
+			productName = SwiftCameraTests;
+			productReference = B3303C1119A8228F006D6693 /* SwiftCameraTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -169,7 +169,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B3303BFA19A8228F006D6693 /* Build configuration list for PBXProject "FitPlus" */;
+			buildConfigurationList = B3303BFA19A8228F006D6693 /* Build configuration list for PBXProject "SwiftCamera" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -183,7 +183,7 @@
 			projectRoot = "";
 			targets = (
 				B3303BFE19A8228F006D6693 /* SwiftCam */,
-				B3303C1019A8228F006D6693 /* FitPlusTests */,
+				B3303C1019A8228F006D6693 /* SwiftCameraTests */,
 			);
 		};
 /* End PBXProject section */
@@ -222,7 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3303C1819A8228F006D6693 /* FitPlusTests.swift in Sources */,
+				B3303C1819A8228F006D6693 /* SwiftCameraTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,7 +331,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = FitPlus/Info.plist;
+				INFOPLIST_FILE = SwiftCamera/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -343,7 +343,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = FitPlus/Info.plist;
+				INFOPLIST_FILE = SwiftCamera/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -361,10 +361,10 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = FitPlusTests/Info.plist;
+				INFOPLIST_FILE = SwiftCameraTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FitPlus.app/FitPlus";
+				PRODUCT_NAME = SwiftCameraTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftCamera.app/SwiftCamera";
 			};
 			name = Debug;
 		};
@@ -376,17 +376,17 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = FitPlusTests/Info.plist;
+				INFOPLIST_FILE = SwiftCameraTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FitPlus.app/FitPlus";
+				PRODUCT_NAME = SwiftCameraTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftCamera.app/SwiftCamera";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B3303BFA19A8228F006D6693 /* Build configuration list for PBXProject "FitPlus" */ = {
+		B3303BFA19A8228F006D6693 /* Build configuration list for PBXProject "SwiftCamera" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B3303C1919A8228F006D6693 /* Debug */,
@@ -404,7 +404,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B3303C1E19A8228F006D6693 /* Build configuration list for PBXNativeTarget "FitPlusTests" */ = {
+		B3303C1E19A8228F006D6693 /* Build configuration list for PBXNativeTarget "SwiftCameraTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B3303C1F19A8228F006D6693 /* Debug */,

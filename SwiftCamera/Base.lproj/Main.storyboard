@@ -8,7 +8,7 @@
         <!--Camera View Controller-->
         <scene sceneID="14q-IQ-2bu">
             <objects>
-                <viewController id="dS1-yy-Nn9" customClass="CameraViewController" customModule="FitPlus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dS1-yy-Nn9" customClass="CameraViewController" customModule="SwiftCamera" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wzt-u9-a1o"/>
                         <viewControllerLayoutGuide type="bottom" id="OCY-Uy-ZlJ"/>
@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fXY-pL-Onq" customClass="PreviewView" customModule="FitPlus" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fXY-pL-Onq" customClass="PreviewView" customModule="SwiftCamera" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56e-D5-s4H">

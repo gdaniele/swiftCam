@@ -1,6 +1,6 @@
 //
-//  FitPlusTests.swift
-//  FitPlusTests
+//  SwiftCameraTests.swift
+//  SwiftCameraTests
 //
 //  Created by Giancarlo Daniele on 8/22/14.
 //  Copyright (c) 2014 Giancarlo Daniele. All rights reserved.
@@ -9,7 +9,7 @@
 import UIKit
 import XCTest
 
-class FitPlusTests: XCTestCase {
+class SwiftCameraTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
