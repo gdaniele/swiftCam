@@ -115,9 +115,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B3303BFE19A8228F006D6693 /* FitPlus */ = {
+		B3303BFE19A8228F006D6693 /* SwiftCam */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B3303C1B19A8228F006D6693 /* Build configuration list for PBXNativeTarget "FitPlus" */;
+			buildConfigurationList = B3303C1B19A8228F006D6693 /* Build configuration list for PBXNativeTarget "SwiftCam" */;
 			buildPhases = (
 				B3303BFB19A8228F006D6693 /* Sources */,
 				B3303BFC19A8228F006D6693 /* Frameworks */,
@@ -127,7 +127,7 @@
 			);
 			dependencies = (
 			);
-			name = FitPlus;
+			name = SwiftCam;
 			productName = FitPlus;
 			productReference = B3303BFF19A8228F006D6693 /* FitPlus.app */;
 			productType = "com.apple.product-type.application";
@@ -182,7 +182,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B3303BFE19A8228F006D6693 /* FitPlus */,
+				B3303BFE19A8228F006D6693 /* SwiftCam */,
 				B3303C1019A8228F006D6693 /* FitPlusTests */,
 			);
 		};
@@ -231,7 +231,7 @@
 /* Begin PBXTargetDependency section */
 		B3303C1319A8228F006D6693 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B3303BFE19A8228F006D6693 /* FitPlus */;
+			target = B3303BFE19A8228F006D6693 /* SwiftCam */;
 			targetProxy = B3303C1219A8228F006D6693 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -395,7 +395,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B3303C1B19A8228F006D6693 /* Build configuration list for PBXNativeTarget "FitPlus" */ = {
+		B3303C1B19A8228F006D6693 /* Build configuration list for PBXNativeTarget "SwiftCam" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B3303C1C19A8228F006D6693 /* Debug */,

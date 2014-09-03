@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B3303BFE19A8228F006D6693"
-               BuildableName = "FitPlus.app"
-               BlueprintName = "FitPlus"
+               BuildableName = "SwiftCam.app"
+               BlueprintName = "SwiftCam"
                ReferencedContainer = "container:FitPlus.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -57,8 +57,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B3303BFE19A8228F006D6693"
-            BuildableName = "FitPlus.app"
-            BlueprintName = "FitPlus"
+            BuildableName = "SwiftCam.app"
+            BlueprintName = "SwiftCam"
             ReferencedContainer = "container:FitPlus.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -76,8 +76,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B3303BFE19A8228F006D6693"
-            BuildableName = "FitPlus.app"
-            BlueprintName = "FitPlus"
+            BuildableName = "SwiftCam.app"
+            BlueprintName = "SwiftCam"
             ReferencedContainer = "container:FitPlus.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -94,8 +94,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B3303BFE19A8228F006D6693"
-            BuildableName = "FitPlus.app"
-            BlueprintName = "FitPlus"
+            BuildableName = "SwiftCam.app"
+            BlueprintName = "SwiftCam"
             ReferencedContainer = "container:FitPlus.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
